@@ -4,6 +4,11 @@ import entidades.Autos;
 import entidades.Cuenta;
 import entidades.Persona;
 import entidades.Pelicula;
+import Figuras.Cuadrado;
+import Libreria.Autor;
+import Libreria.Genero;
+import Libreria.Libro;
+import Libreria.MostrarInfo;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -13,7 +18,7 @@ public class App {
         
         System.out.println(fiat.getMarca());
         System.out.println(fiat.getPuertas());
-        System.out.println(fiat.getMarca());*/
+        System.out.println(fiat.getMarca());
         
         Cuenta uno = new Cuenta(0, "Matias");
 
@@ -31,5 +36,24 @@ public class App {
         System.out.println(terminator.getAño());
         System.out.println(terminator.getTitulo());
 
+        Cuadrado cuadrado = new Cuadrado();
+        cuadrado.setNumeroLados(2);
+        cuadrado.mostrarCantidadDeLados("cuadrado");*/
+
+        //clases abstractas, interfaces y polimorfismo
+        Cuadrado cuadrado = new Cuadrado();
+        cuadrado.setNumeroLados(2);
+        cuadrado.mostrarCantidadDeLados("cuadrado");
+
+        MostrarInfo autor = new Autor();
+        MostrarInfo genero = new Genero();
+        MostrarInfo libro = new Libro();
+        procesar(autor);
+        procesar(genero);
+        procesar(libro);
+
+    }
+    private static void procesar(MostrarInfo m){
+        m.imprimir();
     }
 }
